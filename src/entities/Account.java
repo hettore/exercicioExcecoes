@@ -53,15 +53,15 @@ public class Account {
 	}
 
 	public void deposit(double amount) {
-		balance = balance + amount;
+		balance += amount;
 	}
 
 	public void withdraw(double amount) throws Exception2 {
 		if (amount > getWithdrwLimit()) {
-			throw new Exception2("The amount exceeds withdraw limit");
+			throw new Exception2("Withdraw error: The amount exceeds withdraw limit");
 		}
 		if (amount > getBalance()) {
-			throw new Exception2("Not enough balance");
+			throw new Exception2("Withdraw error: Not enough balance.");
 		}
 
 		balance -= amount;
